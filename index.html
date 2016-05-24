@@ -14,25 +14,15 @@
       <h2 id="time"></h2>
     </div>
     <form id="alarmset">
-      <div class="row">
-        <div class="form-group">
-          <div class="col-xs-3">
-            <label for="alarm">Set An Alarm:</label>
-            <input id="hour" name="alarmHour" type="number" min="1" max="12" step="1" value="6" required>
-            <input id="minute" name="alarmMin" type="number" min="0" max="59" step="1" value="00" required>
-          </div>
-          <div class="col-xs-6 radios">
-            <label for="">AM</label>
-            <input class='radio radio-inline' type="radio" name="AM" value="AM">
-            <label for="">PM</label>
-            <input class='radio radio-inline' type="radio" name="AM" value="PM">
-          </div>
-        </div>
+      <div class="form-group">
+        <label for="alarm">Set An Alarm:</label>
+        <input id="user_time" type="time" name="user_time" value="12:00">
+        <button type="submit" name="button">Submit</button>
       </div>
-      <button type="submit" name="button">Submit</button>
     </form>
     <div class="display">
-
+    </div>
+    <div class="alarmDisplay">
     </div>
   </div>
 </body>
