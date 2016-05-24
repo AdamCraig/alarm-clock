@@ -1,28 +1,25 @@
 var currentTime;
 
-incrementSeconds = function() {
+function incrementSeconds () {
   currentTime = moment().format('H:mm');
   $('#time').html(currentTime);
   setTimeout(incrementSeconds, 1000);
 }
 
-timeCheck = function() {
+function timeCheck () {
   if (currentTime === time){
     $('.alarmDisplay').text('be alarmed!!');
+    flash();
   }
   setTimeout(timeCheck, 1000);
 }
 
-$(document).ready(function() {
-    incrementSeconds();
-    timeCheck();
+function getRandomColor () {
+  var hex = Math.floor(Math.random() * 0xFFFFFF);
+  return "#" + ("000000" + hex.toString(16)).substr(-6);
+}
 
-    $('#alarmset').submit(function(event){
-      event.preventDefault();
-      time = $('#user_time').val();
-      console.log(time);
-      console.log(currentTime);
-      $('.display').text('Alarm is set for ' + time + '.');
-    });
-
-});
+function flash () {
+  document.body.style.backgroundColor = getRandomColor();
+  setTimeout(flash, 700);
+}
